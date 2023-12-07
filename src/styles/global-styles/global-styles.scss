@@ -13,27 +13,39 @@ body {
   .constrain-h1 {
     max-width: 18ch;
   }
-
+  p {
+    max-width: 70ch;
+  }
+}
+.intro {
+  padding: var(--space-s) var(--space-l);
+  h1,
   h2,
   h3 {
-    // max-width: 30ch;
+    line-height: 1.1;
+    // font-weight: 900;
   }
-
-  // h1 {
-  //   @apply text-step-5;
-  // }
-
-  // h2 {
-  //   @apply text-step-4;
-  // }
-
-  // h3 {
-  //   @apply text-step-3;
-  // }
+  .constrain-h1 {
+    max-width: 18ch;
+  }
+  h1 {
+    max-width: 18ch;
+  }
+  h2,
+  h3 {
+    max-width: 30ch;
+  }
+  p {
+    max-width: 55ch;
+  }
+  /* So text scale renders nicely */
+  div[class*="text-"] {
+    --flow-space: 1rem;
+    line-height: 1;
+    font-weight: 700;
+  }
 }
-/* */
-
-p,
+\ p,
 li {
   max-width: 70ch;
 }
@@ -56,13 +68,6 @@ h2 + *,
 h3 + * {
   --flow-space: var(--space-base);
 }
-
-/* So text scale renders nicely */
-// div[class*="text-"] {
-//   --flow-space: 1rem;
-//   line-height: 1;
-//   font-weight: 700;
-// }
 
 .astro-code {
   padding: 2em 3em;

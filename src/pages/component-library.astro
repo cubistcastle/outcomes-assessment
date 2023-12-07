@@ -27,34 +27,41 @@ import { Code } from "astro:components";
       > this site was built with <a
         class="underline"
         href="https://tailwindcss.com/">TailwindCSS</a
-      > and <a class="underline" href="https://astro.build/">Astro</a>. For some
-      components I took advantage of Astro's minimal component capabilities to
-      abstract code sections for my own reuse and consistency. In the below
+      > (here is the <a
+        class="underline"
+        href="https://github.com/cubistcastle/outcomes-assessment/blob/main/tailwind.config.cjs"
+        >tailwind.config</a
+      >) and <a class="underline" href="https://astro.build/">Astro</a>. For
+      some components I took advantage of Astro's minimal component capabilities
+      to abstract code sections for my own reuse and consistency. In the below
       examples, if a component depends on other components, I have indicated the
-      component by name and not duplicated the code. In a real world project I'm
-      sure some way of demarcating templating areas would exist, but in the HTML
-      examples I've often hardcoded values, left svg's inline, and refrained
-      from abstracting Tailwind classes with <code>@apply</code>. I have tried
-      to provide variables/template areas for each component and any
-      dependencies.
+      component by name and not duplicated the code. In a real world project,
+      I'm sure some way of demarcating templating areas would exist, but in the
+      HTML examples I've often hardcoded values, left svg's inline, and
+      refrained from abstracting Tailwind classes with <code>@apply</code>. I
+      have tried to denote variables/template areas for each component and any
+      dependencies that are required.
     </p>
     <p>
       While I have tried to interperate the design as best I could, know that in
-      a real world situation, I would have had many more questions and
-      clarifications. I just thought I would spare your time and do what I could
-      in this example. Furthermore, I am sure the dev team has standards and
+      a normal project, I would have more questions and clarifications and been
+      altogether more collaborative. In this case, I wanted to spare your time
+      as much as possible. Furthermore, I am sure the dev team has standards and
       preferences around deliverables. Not knowing these, I defaulted to
       simplicity and providing something that I believe I would find helpful.
       Hopefully you do too.
     </p>
+    <hr class="py-6" />
     <!-- button primary -->
     <h2 class="text-step-2 font-bold">Button — Primary</h2>
-    <p>description and use case, future use case</p>
     <p>
       The primary button style uses brand appropriate maroon background and can
       optionally contain an icon. It has varying active, focus, and hover
-      states. The icon should be hidden via aria for accessbility. This style
-      should be used for primary actions on a given page.
+      states. The icon should be hidden via ARIA for accessbility. This style
+      should be used for primary actions on a given page. Future needs might
+      require alternative icon placement, different, or no transition effects,
+      etc. Also, this and other components could have a secondary style for
+      system dark mode.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -123,10 +130,11 @@ import { Code } from "astro:components";
     <!-- secondary button -->
     <h2 class="font-bold text-step-2">Button — Secondary</h2>
     <p>
-      The secondary button style uses the same as the primary button except for
-      the change in main and state-based colors. This style should be used for
-      secondary actions on a given page. Could also be adapted to darker
-      backgrounds like the alternate icon only button style below.
+      The secondary button style nearly the same as the primary button except
+      for the change in the default and state-based colors. This style should be
+      used for secondary actions on a given page. This could also also be
+      adapted to darker backgrounds like the alternate icon only button style
+      below.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -194,16 +202,17 @@ import { Code } from "astro:components";
       Button — Icon Only, for Light and Dark Backgrounds
     </h2>
     <p>
-      Icon button contains no visible text relying on the icon alone. As such,
-      special care needs to be taken to provide accessible affordances. In this
-      case we should ensure that our SVG is hidden from screen readers via <code
+      The icon button contains no visible text relying on the icon alone. As
+      such, special care needs to be taken to provide accessible affordances. In
+      this case we should ensure that our SVG is hidden from screen readers via <code
         >aria-hidden="true" focusable="false"</code
       >. Use <code>aria-label</code> to provide screen readers an appropriate
-      label.
+      substitute.
     </p>
     <p>
       The icon button comes in two variants for use on light or dark
-      backgrounds.
+      backgrounds. This type of button could be further adapted into a flex
+      wrapper to control layout as necessary.
     </p>
     <p>
       <span class="underline decoration-wavy decoration-pink-500">Note:</span> I
@@ -283,12 +292,13 @@ import { Code } from "astro:components";
     <!-- card light and dark -->
     <h2 class="font-bold text-step-2">Card — light and dark</h2>
     <p>
-      The card component could potentially be flexible enought to hold a variety
+      The card component could potentially be flexible enough to hold a variety
       of information. For now, this is tailored to the Outcomes Assessment
-      design. It is flexible enought to handle both additional icon buttons and
-      additional secondary buttons. The card has two color options (Not entirely
-      clear to me if these color variants are tied to undergrad vs grad or
-      something else).
+      design. It is flexible enough to handle both additional icon buttons and
+      additional secondary buttons. The card has two background color options
+      (Not entirely clear to me if these color variants are tied to undergrad vs
+      grad or something else). Depending on needs, the content of the card could
+      be configured in different ways and accept different properties.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -389,7 +399,7 @@ import { Code } from "astro:components";
       The header component prominently uses maroon to establish the brand. It
       utilizes a hamburger menu on desktop and mobile (although the resulting
       menu and interaction has not been included here as it wasn not part of the
-      design). The title is customizable and so is the SVG icon. Like other
+      design spec). The title is customizable and so is the SVG icon. Like other
       components this SVG should be hidden via <code
         >aria-hidden="true" focusable="false"</code
       >.
@@ -549,8 +559,8 @@ import { Code } from "astro:components";
       The search component is a bit tricky as I do not know the standard search
       functionality this application would use (e.g. Is it a combobox? Is it a
       filter? Does it need to be wrapped in a form tag? etc). I've kept it
-      fairly minimal with an aria-label for accessiblity but this one could be
-      more complex depending on its functionality.
+      fairly minimal with an aria-label for accessiblity but this one could
+      certainly be more complex depending on its functionality.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -622,7 +632,7 @@ import { Code } from "astro:components";
       Enable button is to highlight the selected button or just to set it off
       from the neighboring gray button. Similarly should the button with 0
       results be disabled? I've chosen to disable it to at least show a
-      different look, but I could see ways to handle this in different ways.
+      different look, but I could see ways to handle this in differently.
     </p>
     <p>
       This component is flexible enough to be used throughout the application.
@@ -715,7 +725,7 @@ import { Code } from "astro:components";
     <p>
       As this is just a simple grid, it could be used in a variety of scenarios
       and is not strictly limited to cards. I am calling it a container for
-      cards here, as that is the only use I see in the single design.
+      cards here, as that is the only use I see in this particular design.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -756,12 +766,17 @@ import { Code } from "astro:components";
       theme="github-dark"
       wrap
     />
+    <a
+      class="underline"
+      href="https://github.com/cubistcastle/outcomes-assessment/blob/main/src/styles/compositions/grid.scss"
+      >view source</a
+    >
 
     <h2 class="font-bold text-step-2">Card Grid Header</h2>
     <p>
-      This component is flexible enough to be used throughout the application.
-      In case of third button in the button group, the border radius applies
-      only to the first and last child.
+      This is a simple header for the card list. It can handle multiple icons
+      and could easily be used in a variety of contexts where actionable icon
+      buttons are needed close to a title.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>

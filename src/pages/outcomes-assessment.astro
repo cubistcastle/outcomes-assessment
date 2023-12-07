@@ -11,7 +11,7 @@ import CardLight from "../components/Card-Light.astro";
 <Layout title="Texas State Outcomes Assessment">
   <Header />
 
-  <main class="mx-auto pt-2 px-4 xl:px-space-2xl">
+  <main class="mx-auto pt-2 px-4 pb-8 xl:px-space-2xl">
     <SearchBar />
     <ActionBar
       enabled="Enabled departments"
@@ -23,7 +23,12 @@ import CardLight from "../components/Card-Light.astro";
     <div class="bg-stone-200 pb-4 shadow-primary">
       <CardGridHeader />
       <div class="px-4">
-        <ActionBar enabled="Enabled" enabledNum='3' disabled="Disabled" add="Add program" />
+        <ActionBar
+          enabled="Enabled"
+          enabledNum="3"
+          disabled="Disabled"
+          add="Add program"
+        />
       </div>
 
       <div
