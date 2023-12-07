@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  icon?: string;
+  style?: string;
+}
+
+const { title, icon, style } = Astro.props;
+---
+
+<button
+  type="button"
+  class="flex items-center justify-center gap-x-4 bg-maroon-800 px-3 py-2 text-base leading-tight text-stone-50 transition-all ease-in hover:bg-maroon-700 focus:bg-maroon-800 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue active:bg-maroon-950"
+>
+  {title}
+
+  <!-- optional SVG icon, note ARIA hidden and focusable false 
+  <svg
+    aria-hidden="true"
+    class="h-5 w-5 fill-stone-50"
+    viewBox="0 0 15 16"
+    focusable="false"
+    ><path
+      d="M0 12.375V15.5h3.125l9.217-9.216-3.125-3.125L0 12.375Zm14.758-8.508a.833.833 0 0 0 0-1.175l-1.95-1.95a.833.833 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z"
+      fill="#FAFAF9"></path>
+  </svg>
+   -->
+</button>

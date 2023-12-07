@@ -1,0 +1,768 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+import CardLight from "../components/Card-Light.astro";
+import ButtonPrimary from "../components/ButtonPrimary.astro";
+import ButtonSecondary from "../components/ButtonSecondary.astro";
+import IconButtonDark from "../components/IconButtonDark.astro";
+import IconButtonLight from "../components/IconButton-Light.astro";
+import SearchBar from "../components/SearchBar.astro";
+import ActionBar from "../components/ActionBar.astro";
+import CardGridHeader from "../components/CardGridHeader.astro";
+import IconButtonDarkDisable from "../components/IconButtonDark-Disable.astro";
+import { Code } from "astro:components";
+---
+
+<Layout title="Component Library">
+  <div class="comp-lib container mx-auto flow">
+    <h1 class="text-step-5 font-bold constrain-h1">The Component Library</h1>
+    <p>
+      Below you'll find a component library used for the Texas State University
+      Assessment Outcomes application.
+    </p>
+    <p>
+      <span class="underline decoration-wavy decoration-pink-500"
+        >Please note:</span
+      > this site was built with <a
+        class="underline"
+        href="https://tailwindcss.com/">TailwindCSS</a
+      > and <a class="underline" href="https://astro.build/">Astro</a>. For some
+      components I took advantage of Astro's minimal component capabilities to
+      abstract code sections for my own reuse and consistency. In the below
+      examples, if a component depends on other components, I have indicated the
+      component by name and not duplicated the code. In a real world project I'm
+      sure some way of demarcating templating areas would exist, but in the HTML
+      examples I've often hardcoded values, left svg's inline, and refrained
+      from abstracting Tailwind classes with <code>@apply</code>. I have tried
+      to provide variables/template areas for each component and any
+      dependencies.
+    </p>
+    <p>
+      While I have tried to interperate the design as best I could, know that in
+      a real world situation, I would have had many more questions and
+      clarifications. I just thought I would spare your time and do what I could
+      in this example. Furthermore, I am sure the dev team has standards and
+      preferences around deliverables. Not knowing these, I defaulted to
+      simplicity and providing something that I believe I would find helpful.
+      Hopefully you do too.
+    </p>
+    <!-- button primary -->
+    <h2 class="text-step-2 font-bold">Button — Primary</h2>
+    <p>description and use case, future use case</p>
+    <p>
+      The primary button style uses brand appropriate maroon background and can
+      optionally contain an icon. It has varying active, focus, and hover
+      states. The icon should be hidden via aria for accessbility. This style
+      should be used for primary actions on a given page.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        main text
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        optional: svg icon
+      </li>
+    </ul>
+
+    <div
+      class="bg-stone-100 p-10 flex flex-wrap items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <ButtonPrimary title="Primary Button" />
+
+      <button
+        type="button"
+        class="inline-flex items-center gap-x-4 bg-maroon-800 px-5 py-2 text-base leading-tight text-stone-50 transition-all ease-in hover:bg-maroon-700 focus:bg-maroon-800 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue active:bg-maroon-950"
+      >
+        Primary Button
+
+        <!-- optional SVG icon, note ARIA hidden and focusable false  -->
+        <svg
+          aria-hidden="true"
+          class="h-5 w-5 fill-stone-50"
+          viewBox="0 0 15 16"
+          focusable="false"
+          ><path
+            d="M0 12.375V15.5h3.125l9.217-9.216-3.125-3.125L0 12.375Zm14.758-8.508a.833.833 0 0 0 0-1.175l-1.95-1.95a.833.833 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z"
+            fill="#FAFAF9"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="">
+      <Code
+        code={`<!-- Primary Button Style -->
+<button
+  type="button"
+  class="inline-flex items-center gap-x-4 bg-maroon-800 px-5 py-2 text-base leading-tight text-stone-50 transition-all ease-in hover:bg-maroon-700 focus:bg-maroon-800 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue active:bg-maroon-950"
+>
+  {title}
+
+  <!-- optional SVG icon, note ARIA hidden and focusable false  -->
+  <svg
+    aria-hidden="true"
+    class="h-5 w-5 fill-stone-50"
+    viewBox="0 0 15 16"
+    focusable="false"
+    ><path
+      d="M0 12.375V15.5h3.125l9.217-9.216-3.125-3.125L0 12.375Zm14.758-8.508a.833.833 0 0 0 0-1.175l-1.95-1.95a.833.833 0 0 0-1.175 0l-1.525 1.525 3.125 3.125 1.525-1.525Z"
+      fill="#FAFAF9"></path>
+  </svg>
+</button>
+`}
+        lang="html"
+        theme="github-dark"
+        wrap
+      />
+    </div>
+    <!-- secondary button -->
+    <h2 class="font-bold text-step-2">Button — Secondary</h2>
+    <p>
+      The secondary button style uses the same as the primary button except for
+      the change in main and state-based colors. This style should be used for
+      secondary actions on a given page. Could also be adapted to darker
+      backgrounds like the alternate icon only button style below.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        main text
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        optional: svg icon
+      </li>
+    </ul>
+    <div
+      class="bg-stone-100 p-10 flex flex-wrap items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <ButtonSecondary title="Secondary Button" />
+      <button
+        type="button"
+        class="flex items-center justify-center gap-x-4 bg-neutral-300 px-3 py-2 text-sm font-semibold leading-tight text-neutral-900 transition-all ease-in hover:bg-neutral-400 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue focus:ring-offset-inherit active:bg-neutral-500 active:text-stone-50 [&>*]:active:fill-stone-50"
+        >Secondary Button
+
+        <svg
+          class="h-4 w-4 fill-neutral-900 active:fill-white transition-all ease-in"
+          viewBox="0 0 15 16"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M0 12.3754V15.5004H3.125L12.3417 6.28369L9.21667 3.15869L0 12.3754ZM14.7583 3.86702C14.9135 3.71089 15.0007 3.49968 15.0007 3.27952C15.0007 3.05937 14.9135 2.84816 14.7583 2.69202L12.8083 0.742022C12.6522 0.586813 12.441 0.499695 12.2208 0.499695C12.0007 0.499695 11.7895 0.586813 11.6333 0.742022L10.1083 2.26702L13.2333 5.39202L14.7583 3.86702Z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <Code
+      code={`<!-- Secondary Button Style, with optional icon -->
+ <button
+  type="button"
+  class="flex items-center justify-center gap-x-4 bg-neutral-300 px-3 py-2 text-sm font-semibold leading-tight text-neutral-900 transition-all ease-in hover:bg-neutral-400 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue focus:ring-offset-inherit active:text-stone-50 active:bg-neutral-500"
+>
+
+  Secondary Button
+  <!-- optional SVG icon, note ARIA hidden and focusable false -->
+    <svg
+      class="h-5 w-5 fill-neutral-900"
+      viewBox="0 0 15 16"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M0 12.3754V15.5004H3.125L12.3417 6.28369L9.21667 3.15869L0 12.3754ZM14.7583 3.86702C14.9135 3.71089 15.0007 3.49968 15.0007 3.27952C15.0007 3.05937 14.9135 2.84816 14.7583 2.69202L12.8083 0.742022C12.6522 0.586813 12.441 0.499695 12.2208 0.499695C12.0007 0.499695 11.7895 0.586813 11.6333 0.742022L10.1083 2.26702L13.2333 5.39202L14.7583 3.86702Z"
+      ></path>
+    </svg>
+
+</button>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <!-- icon buttons -->
+    <h2 class="font-bold text-step-2">
+      Button — Icon Only, for Light and Dark Backgrounds
+    </h2>
+    <p>
+      Icon button contains no visible text relying on the icon alone. As such,
+      special care needs to be taken to provide accessible affordances. In this
+      case we should ensure that our SVG is hidden from screen readers via <code
+        >aria-hidden="true" focusable="false"</code
+      >. Use <code>aria-label</code> to provide screen readers an appropriate
+      label.
+    </p>
+    <p>
+      The icon button comes in two variants for use on light or dark
+      backgrounds.
+    </p>
+    <p>
+      <span class="underline decoration-wavy decoration-pink-500">Note:</span> I
+      would reccommend tweaking the colors on the active state on the buttons
+      for light backgrounds and the main, active, and focus states of the
+      buttons for dark backgrounds as both have low color contrast.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        aria-label
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        svg icon
+      </li>
+    </ul>
+
+    <div
+      class="bg-stone-100 p-10 flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <IconButtonDark />
+      <IconButtonDarkDisable />
+      <IconButtonLight />
+    </div>
+    <Code
+      code={`<!-- Icon Button for Light Backgrounds -->
+
+<!-- note placeholder for ARIA label --> 
+<button
+  type="button"
+  aria-label="{Edit program name}"
+  class="inline-flex items-center self-start rounded-sm bg-neutral-300 p-2 text-sm font-semibold leading-6 text-neutral-900 transition-all ease-in hover:bg-neutral-400 focus:bg-neutral-300 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue active:bg-neutral-500 "
+>
+<!-- hide SVG via ARIA -->
+  <svg class="h-5 w-5 fill-neutral-900" viewBox="0 0 15 16" aria-hidden="true"
+  focusable="false">
+    <path
+      d="M0 12.3754V15.5004H3.125L12.3417 6.28369L9.21667 3.15869L0 12.3754ZM14.7583 3.86702C14.9135 3.71089 15.0007 3.49968 15.0007 3.27952C15.0007 3.05937 14.9135 2.84816 14.7583 2.69202L12.8083 0.742022C12.6522 0.586813 12.441 0.499695 12.2208 0.499695C12.0007 0.499695 11.7895 0.586813 11.6333 0.742022L10.1083 2.26702L13.2333 5.39202L14.7583 3.86702Z"
+    ></path>
+  </svg>
+</button>
+
+
+<!-- Icon Button for Dark Backgrounds -->
+<!-- note placeholder for ARIA label -->
+<button
+  type="button"
+  class="inline-flex items-center rounded-sm bg-neutral-500 p-2 text-sm font-semibold leading-6 text-stone-50 transition-all ease-in hover:bg-neutral-400 focus:bg-neutral-500 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue active:bg-neutral-300"
+  aria-label="Disable {department name}"
+>
+  <!-- hide SVG via ARIA -->
+  <svg
+    class="h-5 w-5 fill-stone-50"
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      d="M16.2 0H1.8C1.32788 0.0165649 0.879609 0.211525 0.545567 0.545567C0.211525 0.879609 0.0165649 1.32788 0 1.8V4.509C0.00826436 4.81814 0.0952533 5.12007 0.252739 5.38622C0.410226 5.65237 0.633003 5.87395 0.9 6.03V16.2C0.931402 16.6671 1.13113 17.1069 1.46213 17.4379C1.79313 17.7689 2.23295 17.9686 2.7 18H15.3C15.7671 17.9686 16.2069 17.7689 16.5379 17.4379C16.8689 17.1069 17.0686 16.6671 17.1 16.2V6.03C17.367 5.87395 17.5898 5.65237 17.7473 5.38622C17.9047 5.12007 17.9917 4.81814 18 4.509V1.8C17.9834 1.32788 17.7885 0.879609 17.4544 0.545567C17.1204 0.211525 16.6721 0.0165649 16.2 0ZM15.3 16.2H2.7V6.3H15.3V16.2ZM16.2 4.5H1.8V1.8H16.2V4.5Z"
+      fill="white"></path>
+  </svg>
+</button>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <!-- card light and dark -->
+    <h2 class="font-bold text-step-2">Card — light and dark</h2>
+    <p>
+      The card component could potentially be flexible enought to hold a variety
+      of information. For now, this is tailored to the Outcomes Assessment
+      design. It is flexible enought to handle both additional icon buttons and
+      additional secondary buttons. The card has two color options (Not entirely
+      clear to me if these color variants are tied to undergrad vs grad or
+      something else).
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        title
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        score
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        program
+      </li>
+    </ul>
+    <h3 class="font-bold">dependencies</h3>
+    <ul>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Icon Button Light
+      </li>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Secondary Button
+      </li>
+    </ul>
+    <div
+      class="bg-stone-100 p-10 flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <CardLight />
+    </div>
+    <div
+      class="bg-stone-100 p-10 flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <Card />
+    </div>
+    <Code
+      code={`<!-- light card -->
+
+<!-- card title , score, program, and buttons are variable -->
+<div
+  class="card flex w-full max-w-lg flex-col justify-between bg-white shadow-primary ring-2 ring-inset ring-stone-200"
+>
+  <div class="card-main mb-8 flex justify-between gap-8 p-2">
+    <div class="info-wrap">
+      <h3 class="text-lg font-bold text-turquoise-800">
+        Applied Arts and Sciences (BAAS)
+      </h3>
+      <p class="text-base font-bold text-neutral-600">
+        30.99 Undergraduate 18 Years
+      </p>
+      <p class="text-base">Student Learning (UG)</p>
+    </div>
+    <!-- wrap icon in case additional icons need to be added -->
+    <div class="icon-wrap flex gap-1">
+      <IconButtonLight />
+    </div>
+  </div>
+  <!-- children should take up full width of the card, will accept additional buttons -->
+  <div class="button-wrap flex gap-1 [&>*]:w-full">
+    <ButtonSecondary title="Manage users" />
+    <ButtonSecondary title="Disable" />
+  </div>
+</div>
+
+<!-- dark card -->
+<div
+  class="card flex w-full max-w-lg flex-col justify-between bg-stone-50 shadow-primary ring-2 ring-inset ring-stone-200"
+>
+  <div class="card-main p-2 mb-8 flex justify-between gap-8">
+    <div class="info-wrap">
+      <h3 class="text-lg text-turquoise-800 font-bold">
+        Interdisciplinary Studies (MAIS|MSIS)
+      </h3>
+      <p class="text-base font-bold text-neutral-600">30.99 Masters 11 years</p>
+      <p class="text-base">Student Learning (GR)</p>
+    </div>
+    <!-- wrap icon in case additional icons need to be added -->
+    <div class="icon-wrap flex gap-1">
+      <IconButtonLight />
+    </div>
+  </div>
+
+  <!-- children should take up full width of the card, will accept additional buttons -->
+  <div class="button-wrap flex gap-1 [&>*]:w-full">
+    <ButtonSecondary title="Manage users" />
+    <ButtonSecondary title="Disable" />
+  </div>
+</div>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <h2 class="font-bold text-step-2">Header and Nav</h2>
+    <p>
+      The header component prominently uses maroon to establish the brand. It
+      utilizes a hamburger menu on desktop and mobile (although the resulting
+      menu and interaction has not been included here as it wasn not part of the
+      design). The title is customizable and so is the SVG icon. Like other
+      components this SVG should be hidden via <code
+        >aria-hidden="true" focusable="false"</code
+      >.
+    </p>
+    <p>
+      This component could easily be further divided into subcomponents such as
+      the menu button, icon title, profile badge (potentially with an optional
+      image), and subnav back bar. I'm unsure how much portability is needed for
+      those pieces, so I've left this as one complete component.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        title
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        icon
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        profile initials or image
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        profile status
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        sub nav title
+      </li>
+    </ul>
+    <h3 class="font-bold">dependencies</h3>
+    <ul>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Menu Component (not included here)
+      </li>
+    </ul>
+    <div
+      class="bg-stone-100 p-10 min-w-lg flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <Header />
+    </div>
+    <Code
+      code={`<!-- Header, complete -->
+
+ <header class="grow bg-maroon-800 text-white">
+  <div class="flex items-center">
+    <div class="header-start mr-auto flex items-stretch">
+      <nav
+        class="relative flex h-16 items-center bg-maroon-950 px-6 transition-all ease-in hover:bg-maroon-700 focus:bg-maroon-800"
+      >
+        <button
+          class="nav__toggle after:transpargent static after:absolute after:left-0 after:top-0 after:block after:h-full after:w-full focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+          aria-label="Open menu"
+          aria-expanded="false"
+          type="button"
+        >
+          <!-- hide svg via  aria-hidden, rely on aria-label above since text is also in the svg-->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            width="20"
+            height="23"
+            viewBox="0 0 20 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_219_78)">
+              <path
+                d="M1.61423 15.9977L2.76944 20.9936L3.92082 15.9977H5.53505V22.9049H4.29186V21.0367L4.40853 18.1562L3.18734 22.9049H2.3458L1.12269 18.1562L1.23649 21.0346V22.9049H0V15.9977H1.61423ZM9.69016 19.9165H7.76226V21.7512H10.0402V22.9049H6.52673V15.9977H10.0316V17.1612H7.76226V18.793H9.69016V19.9165ZM15.0282 22.9049H13.7927L11.9853 18.3721V22.9049H10.7507V15.9977H11.9853L13.7965 20.5306V15.9977H15.0282V22.9049ZM20.001 15.9977V20.7788C20.0163 21.0793 19.9777 21.3801 19.8875 21.6633C19.7973 21.9465 19.6573 22.2062 19.476 22.4268C19.2746 22.6282 19.0398 22.7824 18.7851 22.8806C18.5305 22.9788 18.2612 23.019 17.9927 22.9988C17.7208 23.02 17.4479 22.9797 17.1899 22.8804C16.932 22.7811 16.6941 22.6247 16.4904 22.4203C16.3077 22.1957 16.1674 21.9314 16.078 21.6437C15.9885 21.3559 15.9519 21.0507 15.9702 20.7464V15.9977H17.2134V20.7464C17.1913 21.0392 17.2501 21.3325 17.3817 21.5861C17.4587 21.6789 17.5539 21.7499 17.6597 21.7936C17.7655 21.8373 17.8789 21.8523 17.9908 21.8375C18.102 21.8527 18.2147 21.838 18.3199 21.7947C18.4251 21.7514 18.5198 21.6806 18.5962 21.5882C18.7242 21.341 18.7828 21.0558 18.7645 20.7702V15.9977H20.001Z"
+                fill="#F5F5F5"></path>
+            </g>
+            <g clip-path="url(#clip1_219_78)">
+              <path
+                d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z"
+                fill="#F5F5F5"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_219_78">
+                <rect
+                  width="20"
+                  height="7"
+                  fill="white"
+                  transform="translate(0 16)"></rect>
+              </clipPath>
+              <clipPath id="clip1_219_78">
+                <rect width="18" height="12" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </nav>
+      <div class="flex items-center pl-2">
+        <!-- hide svg via aria-hidden, rely on h1 to communicate title-->
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          width="27"
+          height="24"
+          viewBox="0 0 27 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M24 0H2.667C1.96032 0.0021103 1.28318 0.283775 0.783478 0.783478C0.283775 1.28318 0.0021103 1.96032 0 2.667V21.333C0.0021103 22.0397 0.283775 22.7168 0.783478 23.2165C1.28318 23.7162 1.96032 23.9979 2.667 24H24C24.7067 23.9979 25.3838 23.7162 25.8835 23.2165C26.3832 22.7168 26.6649 22.0397 26.667 21.333V2.667C26.6649 1.96032 26.3832 1.28318 25.8835 0.783478C25.3838 0.283775 24.7067 0.0021103 24 0ZM10.667 18.667H4V16H10.667V18.667ZM10.667 13.334H4V10.667H10.667V13.334ZM10.667 8.001H4V5.333H10.667V8.001ZM17.094 16.001L13.334 12.214L15.214 10.334L17.094 12.227L21.32 8L23.213 9.893L17.094 16.001Z"
+            fill="white"></path>
+        </svg>
+        <!-- Main page title/header -->
+        <h1 class="p-1 pr-2 text-xl leading-none">Outcomes Assessment</h1>
+      </div>
+    </div>
+    <div class="header-end account-info relative pr-2">
+      <!-- Profile badge/initials -->
+      <a
+        href="#"
+        class="mr-2 flex h-11 w-11 items-center justify-center rounded-full bg-white pt-1 font-bold text-black transition-all hover:opacity-90 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+      >
+        WW
+      </a>
+      <span
+        class="absolute bottom-[-6px] right-4 block h-4 w-4 rounded-full bg-brandgreen-200 ring-1 ring-maroon-800"
+      ></span>
+    </div>
+  </div>
+  <div class="subheader bg-stone-200 py-2 pl-4 pr-4 text-black xl:pl-14">
+    <!-- back nav with name -->
+    <a
+      href="#"
+      class="flex items-center gap-2 text-lg leading-none hover:underline focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+    >
+      <svg
+        width="8"
+        height="12"
+        viewBox="0 0 8 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z"
+          fill="black"></path>
+      </svg>
+       Applied Arts departments and programs</a
+    >
+  </div>
+</header>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+
+    <h2 class="font-bold text-step-2">Search Bar</h2>
+    <p>
+      The search component is a bit tricky as I do not know the standard search
+      functionality this application would use (e.g. Is it a combobox? Is it a
+      filter? Does it need to be wrapped in a form tag? etc). I've kept it
+      fairly minimal with an aria-label for accessiblity but this one could be
+      more complex depending on its functionality.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        placeholder
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        aria-label
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        results count
+      </li>
+    </ul>
+    <div
+      class="bg-stone-100 p-10 flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <SearchBar />
+    </div>
+    <Code
+      code={`<!-- search bar -->
+<div
+  class="search-wrap py-4 flex pr-4 items-center justify-normal max-w-lg grow"
+>
+  <div class="search_group relative basis-2/3 mr-2">
+    <input
+      class="block w-full border border-stone-600 rounded-sm bg-white py-2 pl-2 pr-12 text-sm text-slate-900 placeholder:text-neutral-500 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+      placeholder="Departments and Programs"
+      aria-label="Search Department and Programs"
+      type="search"
+      value=""
+      style="caret-color: rgb(107, 114, 128);"
+    />
+
+    <svg
+      class="pointer-events-none absolute right-2 top-space-2xs h-5 w-5 fill-gray-600"
+      width="19"
+      height="18"
+      viewBox="0 0 19 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M13.0495 11.0199H12.2261L11.9342 10.7499C13.0772 9.47233 13.6598 7.81955 13.5596 6.13861C13.4595 4.45768 12.6845 2.87933 11.3973 1.73494C10.1101 0.590557 8.41083 -0.0308531 6.65626 0.00117965C4.90168 0.0332124 3.22828 0.716196 1.98738 1.90674C0.746488 3.09728 0.0346172 4.70277 0.00122954 6.38615C-0.0321581 8.06952 0.615535 9.69984 1.80832 10.9348C3.00111 12.1698 4.64622 12.9133 6.39825 13.0094C8.15029 13.1055 9.87297 12.5465 11.2046 11.4499L11.486 11.7299V12.5199L16.6975 17.5099L18.2505 16.0199L13.0495 11.0199ZM6.79571 11.0199C5.86805 11.0199 4.96122 10.756 4.1899 10.2616C3.41858 9.76709 2.81741 9.06428 2.46241 8.24202C2.10741 7.41975 2.01452 6.51495 2.1955 5.64203C2.37648 4.76912 2.82319 3.9673 3.47914 3.33796C4.1351 2.70862 4.97084 2.28004 5.88067 2.10641C6.79051 1.93277 7.73358 2.02189 8.59062 2.36248C9.44767 2.70308 10.1802 3.27985 10.6956 4.01988C11.211 4.7599 11.486 5.62993 11.486 6.51994C11.4869 7.11111 11.3661 7.69663 11.1307 8.24295C10.8953 8.78927 10.5498 9.28566 10.1141 9.70368C9.67841 10.1217 9.16103 10.4531 8.5916 10.679C8.02217 10.9049 7.41188 11.0207 6.79571 11.0199Z"
+        fill="#57534E"></path>
+    </svg>
+  </div>
+  <div class="results">
+    <p class="text-sm text-neutral-500">Viewing 1 of 1</p>
+  </div>
+</div>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <h2 class="font-bold text-step-2">Action Bar</h2>
+    <p>
+      This one also could be done in a variety of different ways depending on
+      intended functionality. I am tempted to make this a <code>tablist</code>,
+      but since that would involve some javascript, I've kept it simpler for
+      now. The other question I struggled over was if the blue color of the
+      Enable button is to highlight the selected button or just to set it off
+      from the neighboring gray button. Similarly should the button with 0
+      results be disabled? I've chosen to disable it to at least show a
+      different look, but I could see ways to handle this in different ways.
+    </p>
+    <p>
+      This component is flexible enough to be used throughout the application.
+      In case of third button in the button group, the border radius applies
+      only to the first and last child.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        enabled text
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        disabled text
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        enabled results count
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        disabled results count
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        add button text
+      </li>
+    </ul>
+    <h3 class="font-bold">dependencies:</h3>
+    <ul>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Button Primary
+      </li>
+    </ul>
+    <div
+      class="bg-stone-100 p-10 flex items-center justify-center gap-4 border-black/25 rounded-md border-2"
+    >
+      <ActionBar
+        enabled="Enabled departments"
+        disabled="Disabled Departments"
+        add="Add department"
+        enabledNum="1"
+      />
+    </div>
+    <Code
+      code={`<!-- action bar -->
+<!-- Buttons could have variable names and counts -->
+<div
+  class="action-bar mb-6 flex flex-wrap justify-center gap-6 text-sm sm:justify-normal sm:gap-6"
+>
+  <!-- start two button tabs, border radius applied on first and last child -->
+  <div class="flex rounded [&>button:first-child]:rounded-s-sm [&>button:last-child]:rounded-e-sm ">
+    <button
+      type="button"
+      class="flex flex-nowrap items-center justify-center border  border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
+    >
+      <span
+        class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold inline-block rounded leading-6"
+        >{enabledNum}</span
+      >
+      {enabledText}</button
+    >
+    <button
+      type="button"
+      disabled
+      class="flex flex-nowrap items-center justify-center border  border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
+    >
+      <span
+        class="mr-1 inline-block h-6 w-6 rounded bg-neutral-500 font-bold leading-6 text-white"
+        >{disabledNum}</span
+      >
+      {disabledText}</button
+    >
+  </div>
+  <!-- end tablist -->
+  <ButtonPrimary title={add} />
+</div>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+
+    <h2 class="font-bold text-step-2">simple grid container for cards</h2>
+    <p>
+      This is just a simple fluid grid, but I call it out because it is one of
+      the few things that relies on non-Tailwind CSS. It uses CSS grid and
+      auto-fit. Optionally a gutter size can be passed via a custom property.
+    </p>
+    <p>
+      As this is just a simple grid, it could be used in a variety of scenarios
+      and is not strictly limited to cards. I am calling it a container for
+      cards here, as that is the only use I see in the single design.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        optional: gutter size
+      </li>
+    </ul>
+    <h3 class="font-bold">dependencies:</h3>
+    <ul>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Card
+      </li>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Card Light
+      </li>
+    </ul>
+    <div class="bg-stone-100 p-10 flex border-black/25 rounded-md border-2">
+      <div
+        class="grid justify-items-center mx-4 w-full"
+        style="--gutter:var(--space-xs)"
+      >
+        <Card />
+        <Card />
+        <CardLight />
+        <Card />
+      </div>
+    </div>
+    <Code
+      code={`<!-- card container -->
+<div class="grid justify-items-center mx-4 w-full" style="--gutter:var(--space-xs)" >
+  <Card />
+  <Card />
+  <CardLight />
+  <Card />
+</div>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <h2 class="font-bold text-step-2">Card Grid Header</h2>
+    <p>
+      This component is flexible enough to be used throughout the application.
+      In case of third button in the button group, the border radius applies
+      only to the first and last child.
+    </p>
+    <h3 class="font-bold">customization/fields:</h3>
+    <ul>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        title
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        icons
+      </li>
+    </ul>
+    <h3 class="font-bold">dependencies</h3>
+    <ul>
+      <li class="bg-blue-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        Icon Button Dark
+      </li>
+    </ul>
+    <div class="bg-stone-100 p-10 flex border-black/25 rounded-md border-2">
+      <CardGridHeader />
+    </div>
+    <Code
+      code={`<!-- card grid header -->
+<div
+  class="mb-6 flex w-full items-center justify-between bg-neutral-600 px-5 py-2 text-lg font-light text-white"
+>
+  <h2 class="flex-grow">Organization, Workforce, and Leadership Studies</h2>
+  <div class="icon-set flex flex-nowrap gap-2">
+    <IconButtonDark />
+    <IconButtonDarkDisable />
+  </div>
+</div>
+`}
+      lang="html"
+      theme="github-dark"
+      wrap
+    />
+    <!-- end comp outline -->
+  </div>
+</Layout>

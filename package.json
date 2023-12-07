@@ -1,0 +1,26 @@
+{
+  "name": "cubed-tailwind-starter",
+  "type": "module",
+  "version": "0.0.2",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.6",
+    "open-props": "^1.5.15",
+    "postcss-custom-media": "^10.0.0",
+    "postcss-jit-props": "^1.0.13",
+    "sass": "^1.66.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "vite-plugin-sass-glob-import": "^3.0.2"
+  }
+}

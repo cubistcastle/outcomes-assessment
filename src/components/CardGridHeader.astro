@@ -1,0 +1,22 @@
+---
+import IconButtonDark from "./IconButtonDark.astro";
+import IconButtonDarkDisable from "./IconButtonDark-Disable.astro";
+interface Props {
+  //   title: string;
+  //   body: string;
+  //   href: string;
+}
+
+// const { href, title, body } = Astro.props;
+---
+
+<!-- h2 and icons are variable -->
+<div
+  class="mb-6 flex w-full items-center justify-between bg-neutral-600 px-5 py-2 text-lg font-light text-white"
+>
+  <h2 class="flex-grow">Organization, Workforce, and Leadership Studies</h2>
+  <div class="icon-set flex flex-nowrap gap-2">
+    <IconButtonDark />
+    <IconButtonDarkDisable />
+  </div>
+</div>

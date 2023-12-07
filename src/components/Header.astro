@@ -1,0 +1,112 @@
+---
+interface Props {
+  //   title: string;
+  //   body: string;
+  //   href: string;
+}
+
+// const { href, title, body } = Astro.props;
+---
+
+<header class="grow bg-maroon-800 text-white">
+  <div class="flex items-center">
+    <div class="header-start mr-auto flex items-stretch">
+      <nav
+        class="relative flex h-16 items-center bg-maroon-950 px-6 transition-all ease-in hover:bg-maroon-700 focus:bg-maroon-800"
+      >
+        <button
+          class="nav__toggle after:transpargent static after:absolute after:left-0 after:top-0 after:block after:h-full after:w-full focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+          aria-label="Open menu"
+          aria-expanded="false"
+          type="button"
+        >
+          <!-- hide svg via  aria-hidden, rely on aria-label above since text is also in the svg-->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            width="20"
+            height="23"
+            viewBox="0 0 20 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_219_78)">
+              <path
+                d="M1.61423 15.9977L2.76944 20.9936L3.92082 15.9977H5.53505V22.9049H4.29186V21.0367L4.40853 18.1562L3.18734 22.9049H2.3458L1.12269 18.1562L1.23649 21.0346V22.9049H0V15.9977H1.61423ZM9.69016 19.9165H7.76226V21.7512H10.0402V22.9049H6.52673V15.9977H10.0316V17.1612H7.76226V18.793H9.69016V19.9165ZM15.0282 22.9049H13.7927L11.9853 18.3721V22.9049H10.7507V15.9977H11.9853L13.7965 20.5306V15.9977H15.0282V22.9049ZM20.001 15.9977V20.7788C20.0163 21.0793 19.9777 21.3801 19.8875 21.6633C19.7973 21.9465 19.6573 22.2062 19.476 22.4268C19.2746 22.6282 19.0398 22.7824 18.7851 22.8806C18.5305 22.9788 18.2612 23.019 17.9927 22.9988C17.7208 23.02 17.4479 22.9797 17.1899 22.8804C16.932 22.7811 16.6941 22.6247 16.4904 22.4203C16.3077 22.1957 16.1674 21.9314 16.078 21.6437C15.9885 21.3559 15.9519 21.0507 15.9702 20.7464V15.9977H17.2134V20.7464C17.1913 21.0392 17.2501 21.3325 17.3817 21.5861C17.4587 21.6789 17.5539 21.7499 17.6597 21.7936C17.7655 21.8373 17.8789 21.8523 17.9908 21.8375C18.102 21.8527 18.2147 21.838 18.3199 21.7947C18.4251 21.7514 18.5198 21.6806 18.5962 21.5882C18.7242 21.341 18.7828 21.0558 18.7645 20.7702V15.9977H20.001Z"
+                fill="#F5F5F5"></path>
+            </g>
+            <g clip-path="url(#clip1_219_78)">
+              <path
+                d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z"
+                fill="#F5F5F5"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_219_78">
+                <rect
+                  width="20"
+                  height="7"
+                  fill="white"
+                  transform="translate(0 16)"></rect>
+              </clipPath>
+              <clipPath id="clip1_219_78">
+                <rect width="18" height="12" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </nav>
+      <div class="flex items-center pl-2">
+        <!-- hide svg via aria-hidden, rely on h1 to communicate title-->
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          width="27"
+          height="24"
+          viewBox="0 0 27 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M24 0H2.667C1.96032 0.0021103 1.28318 0.283775 0.783478 0.783478C0.283775 1.28318 0.0021103 1.96032 0 2.667V21.333C0.0021103 22.0397 0.283775 22.7168 0.783478 23.2165C1.28318 23.7162 1.96032 23.9979 2.667 24H24C24.7067 23.9979 25.3838 23.7162 25.8835 23.2165C26.3832 22.7168 26.6649 22.0397 26.667 21.333V2.667C26.6649 1.96032 26.3832 1.28318 25.8835 0.783478C25.3838 0.283775 24.7067 0.0021103 24 0ZM10.667 18.667H4V16H10.667V18.667ZM10.667 13.334H4V10.667H10.667V13.334ZM10.667 8.001H4V5.333H10.667V8.001ZM17.094 16.001L13.334 12.214L15.214 10.334L17.094 12.227L21.32 8L23.213 9.893L17.094 16.001Z"
+            fill="white"></path>
+        </svg>
+        <!-- Main page title/header -->
+        <h1 class="p-1 pr-2 text-xl leading-none">Outcomes Assessment</h1>
+      </div>
+    </div>
+    <div class="header-end account-info relative pr-2">
+      <!-- Profile badge/initials -->
+      <a
+        href="#"
+        class="mr-2 flex h-11 w-11 items-center justify-center rounded-full bg-white pt-1 font-bold text-black transition-all hover:opacity-90 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+      >
+        WW
+      </a>
+      <span
+        class="absolute bottom-[-6px] right-4 block h-4 w-4 rounded-full bg-brandgreen-200 ring-1 ring-maroon-800"
+      ></span>
+    </div>
+  </div>
+  <div class="subheader bg-stone-200 py-2 pl-4 pr-4 text-black xl:pl-14">
+    <!-- back nav with name -->
+    <a
+      href="#"
+      class="flex items-center gap-2 text-lg leading-none hover:underline focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+    >
+      <svg
+        width="8"
+        height="12"
+        viewBox="0 0 8 12"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z"
+          fill="black"></path>
+      </svg>
+       Applied Arts departments and programs</a
+    >
+  </div>
+</header>

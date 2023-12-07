@@ -1,0 +1,36 @@
+---
+import IconButtonLight from "./IconButton-Light.astro";
+import ButtonSecondary from "./ButtonSecondary.astro";
+interface Props {
+  //   title: string;
+  //   body: string;
+  //   href: string;
+}
+
+// const { href, title, body } = Astro.props;
+---
+
+<!-- card title , score, program, and buttons are variable -->
+<div
+  class="card flex w-full max-w-lg flex-col justify-between bg-stone-50 shadow-primary ring-2 ring-inset ring-stone-200"
+>
+  <div class="card-main p-2 mb-8 flex justify-between gap-8">
+    <div class="info-wrap">
+      <h3 class="text-lg text-turquoise-800 font-bold">
+        Interdisciplinary Studies (MAIS|MSIS)
+      </h3>
+      <p class="text-base font-bold text-neutral-600">30.99 Masters 11 years</p>
+      <p class="text-base">Student Learning (GR)</p>
+    </div>
+    <!-- wrap icon in case additional icons need to be added -->
+    <div class="icon-wrap flex gap-1">
+      <IconButtonLight />
+    </div>
+  </div>
+
+  <!-- children should take up full width of the card, will accept additional buttons -->
+  <div class="button-wrap flex gap-1 [&>*]:w-full">
+    <ButtonSecondary title="Manage users" />
+    <ButtonSecondary title="Disable" />
+  </div>
+</div>

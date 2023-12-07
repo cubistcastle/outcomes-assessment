@@ -1,0 +1,42 @@
+---
+interface Props {
+  //   title: string;
+  //   body: string;
+  //   href: string;
+}
+
+// const { href, title, body } = Astro.props;
+---
+
+<div
+  class="search-wrap py-4 flex pr-4 items-center justify-normal max-w-lg grow"
+>
+  <div class="search_group relative basis-2/3 mr-2">
+    <input
+      class="block w-full border border-stone-600 rounded-sm bg-white py-2 pl-2 pr-12 text-sm text-slate-900 placeholder:text-neutral-500 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
+      placeholder="Departments and Programs"
+      aria-label="Search Department and Programs"
+      type="search"
+      value=""
+      style="caret-color: rgb(107, 114, 128);"
+    />
+
+    <svg
+      class="pointer-events-none absolute right-2 top-space-2xs h-5 w-5 fill-gray-600"
+      width="19"
+      height="18"
+      viewBox="0 0 19 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M13.0495 11.0199H12.2261L11.9342 10.7499C13.0772 9.47233 13.6598 7.81955 13.5596 6.13861C13.4595 4.45768 12.6845 2.87933 11.3973 1.73494C10.1101 0.590557 8.41083 -0.0308531 6.65626 0.00117965C4.90168 0.0332124 3.22828 0.716196 1.98738 1.90674C0.746488 3.09728 0.0346172 4.70277 0.00122954 6.38615C-0.0321581 8.06952 0.615535 9.69984 1.80832 10.9348C3.00111 12.1698 4.64622 12.9133 6.39825 13.0094C8.15029 13.1055 9.87297 12.5465 11.2046 11.4499L11.486 11.7299V12.5199L16.6975 17.5099L18.2505 16.0199L13.0495 11.0199ZM6.79571 11.0199C5.86805 11.0199 4.96122 10.756 4.1899 10.2616C3.41858 9.76709 2.81741 9.06428 2.46241 8.24202C2.10741 7.41975 2.01452 6.51495 2.1955 5.64203C2.37648 4.76912 2.82319 3.9673 3.47914 3.33796C4.1351 2.70862 4.97084 2.28004 5.88067 2.10641C6.79051 1.93277 7.73358 2.02189 8.59062 2.36248C9.44767 2.70308 10.1802 3.27985 10.6956 4.01988C11.211 4.7599 11.486 5.62993 11.486 6.51994C11.4869 7.11111 11.3661 7.69663 11.1307 8.24295C10.8953 8.78927 10.5498 9.28566 10.1141 9.70368C9.67841 10.1217 9.16103 10.4531 8.5916 10.679C8.02217 10.9049 7.41188 11.0207 6.79571 11.0199Z"
+        fill="#57534E"></path>
+    </svg>
+  </div>
+  <div class="results">
+    <p class="text-sm text-neutral-500">Viewing 1 of 1</p>
+  </div>
+</div>

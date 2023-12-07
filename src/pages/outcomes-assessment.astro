@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import SearchBar from "../components/SearchBar.astro";
+import CardGridHeader from "../components/CardGridHeader.astro";
+import ActionBar from "../components/ActionBar.astro";
+import Card from "../components/Card.astro";
+import CardLight from "../components/Card-Light.astro";
+---
+
+<Layout title="Texas State Outcomes Assessment">
+  <Header />
+
+  <main class="mx-auto pt-2 px-4 xl:px-space-2xl">
+    <SearchBar />
+    <ActionBar
+      enabled="Enabled departments"
+      disabled="Disabled Departments"
+      add="Add department"
+      enabledNum="1"
+    />
+
+    <div class="bg-stone-200 pb-4 shadow-primary">
+      <CardGridHeader />
+      <div class="px-4">
+        <ActionBar enabled="Enabled" enabledNum='3' disabled="Disabled" add="Add program" />
+      </div>
+
+      <div
+        class="grid justify-items-center mx-4"
+        style="--gutter:var(--space-xs)"
+      >
+        <CardLight />
+        <Card />
+        <Card />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style></style>
