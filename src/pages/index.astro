@@ -6,204 +6,29 @@ import IconButtonDark from "../components/IconButtonDark.astro";
 import IconButtonDarkDisable from "../components/IconButtonDark-Disable.astro";
 ---
 
-<Layout title="TXST Comp Test">
-  <header class="bg-maroon-800 text-white">
-    <div class="flex items-center">
-      <div class="header-start flex items-stretch mr-auto">
-        <nav class="flex relative bg-maroon-950 zxpy-5 px-6 h-16 items-center">
-          <button
-            class="nav__toggle after:transpargent static after:absolute after:left-0 after:top-0 after:block after:h-full after:w-full"
-            aria-label="Open menu"
-            aria-expanded="false"
-            type="button"
-          >
-            <svg
-              width="20"
-              height="23"
-              viewBox="0 0 20 23"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_219_78)">
-                <path
-                  d="M1.61423 15.9977L2.76944 20.9936L3.92082 15.9977H5.53505V22.9049H4.29186V21.0367L4.40853 18.1562L3.18734 22.9049H2.3458L1.12269 18.1562L1.23649 21.0346V22.9049H0V15.9977H1.61423ZM9.69016 19.9165H7.76226V21.7512H10.0402V22.9049H6.52673V15.9977H10.0316V17.1612H7.76226V18.793H9.69016V19.9165ZM15.0282 22.9049H13.7927L11.9853 18.3721V22.9049H10.7507V15.9977H11.9853L13.7965 20.5306V15.9977H15.0282V22.9049ZM20.001 15.9977V20.7788C20.0163 21.0793 19.9777 21.3801 19.8875 21.6633C19.7973 21.9465 19.6573 22.2062 19.476 22.4268C19.2746 22.6282 19.0398 22.7824 18.7851 22.8806C18.5305 22.9788 18.2612 23.019 17.9927 22.9988C17.7208 23.02 17.4479 22.9797 17.1899 22.8804C16.932 22.7811 16.6941 22.6247 16.4904 22.4203C16.3077 22.1957 16.1674 21.9314 16.078 21.6437C15.9885 21.3559 15.9519 21.0507 15.9702 20.7464V15.9977H17.2134V20.7464C17.1913 21.0392 17.2501 21.3325 17.3817 21.5861C17.4587 21.6789 17.5539 21.7499 17.6597 21.7936C17.7655 21.8373 17.8789 21.8523 17.9908 21.8375C18.102 21.8527 18.2147 21.838 18.3199 21.7947C18.4251 21.7514 18.5198 21.6806 18.5962 21.5882C18.7242 21.341 18.7828 21.0558 18.7645 20.7702V15.9977H20.001Z"
-                  fill="#F5F5F5"></path>
-              </g>
-              <g clip-path="url(#clip1_219_78)">
-                <path
-                  d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z"
-                  fill="#F5F5F5"></path>
-              </g>
-              <defs>
-                <clipPath id="clip0_219_78">
-                  <rect
-                    width="20"
-                    height="7"
-                    fill="white"
-                    transform="translate(0 16)"></rect>
-                </clipPath>
-                <clipPath id="clip1_219_78">
-                  <rect width="18" height="12" fill="white"></rect>
-                </clipPath>
-              </defs>
-            </svg>
-          </button>
-        </nav>
-        <div class="flex items-center pl-2">
-          <svg
-            width="27"
-            height="24"
-            viewBox="0 0 27 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M24 0H2.667C1.96032 0.0021103 1.28318 0.283775 0.783478 0.783478C0.283775 1.28318 0.0021103 1.96032 0 2.667V21.333C0.0021103 22.0397 0.283775 22.7168 0.783478 23.2165C1.28318 23.7162 1.96032 23.9979 2.667 24H24C24.7067 23.9979 25.3838 23.7162 25.8835 23.2165C26.3832 22.7168 26.6649 22.0397 26.667 21.333V2.667C26.6649 1.96032 26.3832 1.28318 25.8835 0.783478C25.3838 0.283775 24.7067 0.0021103 24 0ZM10.667 18.667H4V16H10.667V18.667ZM10.667 13.334H4V10.667H10.667V13.334ZM10.667 8.001H4V5.333H10.667V8.001ZM17.094 16.001L13.334 12.214L15.214 10.334L17.094 12.227L21.32 8L23.213 9.893L17.094 16.001Z"
-              fill="white"></path>
-          </svg>
-          <h1 class="p-1 text-xl">Outcomes Assessment</h1>
-        </div>
-      </div>
-      <div class="header-end account-info relative pr-2">
-        <a
-          href="#"
-          class="bg-white justify-center mr-2 text-black font-bold h-11 w-11 rounded-full flex items-center pt-1 hover:opacity-90 transition-all motion-reduce:transition-none"
-        >
-          WW
-        </a>
-        <span
-          class="block absolute right-4 ring-1 ring-maroon-800 bottom-0 w-3 h-3 rounded-full bg-brandgreen-200"
-        ></span>
-      </div>
-    </div>
-    <div class="subheader bg-stone-200 text-black py-2 pl-12">
-      <a href="#" class="flex items-center gap-2 text-lg hover:underline">
-        <svg
-          width="8"
-          height="12"
-          viewBox="0 0 8 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M7.41 1.41L6 0L0 6L6 12L7.41 10.59L2.83 6L7.41 1.41Z"
-            fill="black"></path>
-        </svg>
-         Applied Arts departments and programs</a
+<Layout title="Outcomes Assessment and Component Library">
+  <main class="container mx-auto px-space-s py-space-l flow">
+    <h1 class="font-bold text-step-4 leading-tight">
+      Outcomes Assessment and Component Library
+    </h1>
+    <p class="text-step-2 leading tight">
+      Hi all, you will find both the <a
+        class="underline"
+        href="/outcomes-assessment">full page design</a
       >
-    </div>
-  </header>
-
-  <main class="mx-auto px-4 xl:px-16">
-    <div
-      class="search-wrap py-4 flex pr-4 items-center justify-normal max-w-lg"
-    >
-      <div class="search_group relative basis-2/3 mr-2">
-        <input
-          class="block w-full border border-stone-600 rounded bg-transparent py-2 pl-2 pr-12 text-sm text-slate-900 placeholder:text-neutral-500"
-          placeholder="Departments and Programs"
-          aria-label="Search Department and Programs"
-          role="combobox"
-          type="text"
-          aria-expanded="false"
-          aria-autocomplete="list"
-          value=""
-          style="caret-color: rgb(107, 114, 128);"
-        />
-
-        <svg
-          class="pointer-events-none absolute right-2 top-2 h-6 w-6 fill-gray-600"
-          width="19"
-          height="18"
-          viewBox="0 0 19 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13.0495 11.0199H12.2261L11.9342 10.7499C13.0772 9.47233 13.6598 7.81955 13.5596 6.13861C13.4595 4.45768 12.6845 2.87933 11.3973 1.73494C10.1101 0.590557 8.41083 -0.0308531 6.65626 0.00117965C4.90168 0.0332124 3.22828 0.716196 1.98738 1.90674C0.746488 3.09728 0.0346172 4.70277 0.00122954 6.38615C-0.0321581 8.06952 0.615535 9.69984 1.80832 10.9348C3.00111 12.1698 4.64622 12.9133 6.39825 13.0094C8.15029 13.1055 9.87297 12.5465 11.2046 11.4499L11.486 11.7299V12.5199L16.6975 17.5099L18.2505 16.0199L13.0495 11.0199ZM6.79571 11.0199C5.86805 11.0199 4.96122 10.756 4.1899 10.2616C3.41858 9.76709 2.81741 9.06428 2.46241 8.24202C2.10741 7.41975 2.01452 6.51495 2.1955 5.64203C2.37648 4.76912 2.82319 3.9673 3.47914 3.33796C4.1351 2.70862 4.97084 2.28004 5.88067 2.10641C6.79051 1.93277 7.73358 2.02189 8.59062 2.36248C9.44767 2.70308 10.1802 3.27985 10.6956 4.01988C11.211 4.7599 11.486 5.62993 11.486 6.51994C11.4869 7.11111 11.3661 7.69663 11.1307 8.24295C10.8953 8.78927 10.5498 9.28566 10.1141 9.70368C9.67841 10.1217 9.16103 10.4531 8.5916 10.679C8.02217 10.9049 7.41188 11.0207 6.79571 11.0199Z"
-            fill="#57534E"></path>
-        </svg>
-      </div>
-      <div class="results">
-        <p class="text-sm text-neutral-500">Viewing 1 of 1</p>
-      </div>
-    </div>
-
-    <div
-      class="action-bar mb-6 flex flex-wrap justify-center sm:justify-normal text-sm gap-4 sm:gap-6"
-    >
-      <div class="rounded flex">
-        <button
-          type="button"
-          class="p-2 text-white bg-turquoise-700 border border-turquoise-700 rounded-s-sm flex items-center justify-center flex-nowrap"
-        >
-          <span
-            class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold rounded leading-6"
-            >1</span
-          >
-          <span>Enabled departments</span></button
-        >
-        <button
-          type="button"
-          class="p-2 text-neutral-500 bg-white border border-neutral-500 rounded-e-sm flex items-center justify-center flex-nowrap"
-        >
-          <span
-            class="mr-1 bg-neutral-500 h-6 w-6 text-white font-bold inline-block rounded leading-6"
-            >0</span
-          > Disabled departments</button
-        >
-      </div>
-      <ButtonPrimary title="Add department" />
-    </div>
-    <div class="bg-stone-200 pb-4 shadow-primary">
-      <div
-        class="bg-neutral-600 text-white font-light py-2 px-6 mb-6 text-lg flex justify-between items-center"
+       and the <a class="underline" href="/component-library"
+        >component library</a
+      > on this site. Thanks for taking the time to look at this!
+      <p class="text-step-2">—Brian</p>
+    </p>
+    <p class="text-step-0 italic text-gray-800 py-12">
+      Full source can be found <a
+        class="underline"
+        href="https://github.com/cubistcastle/outcomes-assessment/"
+        >https://github.com/cubistcastle/outcomes-assessment/</a
       >
-        <h3>Organization, Workforce, and Leadership Studies</h3>
-        <div class="icon-set flex flex-nowrap gap-2">
-          <IconButtonDark />
-          <IconButtonDarkDisable />
-        </div>
-      </div>
-      <div
-        class="action-bar mb-6 flex flex-wrap justify-center sm:justify-normal text-sm mx-4 gap-6 sm:gap-6"
-      >
-        <div class="rounded flex">
-          <button
-            type="button"
-            class="p-2 text-white bg-turquoise-700 border border-turquoise-700 rounded-s-sm flex items-center justify-center flex-nowrap"
-          >
-            <span
-              class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold inline-block rounded leading-6"
-              >3</span
-            >
-             Enabled</button
-          >
-          <button
-            type="button"
-            class="p-2 text-neutral-500 bg-white hover:bg-turquoise-700/50 hover:text-white border border-neutral-500 rounded-e-sm flex items-center justify-center tedsttdfsj flex-nowrap"
-          >
-            <span
-              class="mr-1 bg-neutral-500 h-6 w-6 text-white font-bold inline-block rounded leading-6"
-              >0</span
-            > Disabled</button
-          >
-        </div>
-        <ButtonPrimary title="Add program" />
-      </div>
-      <div
-        class="grid justify-items-center mx-4"
-        style="--gutter:var(--space-xs)"
-      >
-        <Card />
-        <Card />
-        <!-- <Card /> -->
-        <Card />
-      </div>
-    </div>
+    </p>
   </main>
-</Layout>
 
-<style></style>
+  <style></style>
+</Layout>
