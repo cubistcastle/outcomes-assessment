@@ -18,6 +18,7 @@ module.exports = {
       ],
     },
     extend: {
+      // here we have some brand colors from the design file.
       colors: {
         brandgreen: {
           200: "#BFF3FD",

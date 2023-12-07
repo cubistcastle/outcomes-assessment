@@ -32,24 +32,25 @@ import { Code } from "astro:components";
         href="https://github.com/cubistcastle/outcomes-assessment/blob/main/tailwind.config.cjs"
         >tailwind.config</a
       >) and <a class="underline" href="https://astro.build/">Astro</a>. For
-      some components I took advantage of Astro's minimal component capabilities
-      to abstract code sections for my own reuse and consistency. In the below
-      examples, if a component depends on other components, I have indicated the
-      component by name and not duplicated the code. In a real world project,
-      I'm sure some way of demarcating templating areas would exist, but in the
-      HTML examples I've often hardcoded values, left svg's inline, and
-      refrained from abstracting Tailwind classes with <code>@apply</code>. I
-      have tried to denote variables/template areas for each component and any
-      dependencies that are required.
+      some components, I took advantage of Astro's minimal component
+      capabilities to abstract code sections for my own reuse and consistency.
+      In the below examples, if a component depends on other components, I have
+      indicated the component by name and not duplicated the code. In a real
+      world project, I'm sure some way of demarcating templating areas would
+      exist, but in the HTML examples I've often hardcoded values, left svg's
+      inline, and refrained from abstracting Tailwind classes with <code
+        >@apply</code
+      >. I have tried to denote variables/template areas for each component and
+      any dependencies that are required.
     </p>
     <p>
-      While I have tried to interperate the design as best I could, know that in
-      a normal project, I would have more questions and clarifications and been
-      altogether more collaborative. In this case, I wanted to spare your time
-      as much as possible. Furthermore, I am sure the dev team has standards and
+      While I have tried to interperate the design as best I could, I would have
+      more questions and clarifications and been altogether more collaborative
+      under normal circumstances. In this case, I wanted to spare your time as
+      much as possible. Furthermore, I am sure the dev team has standards and
       preferences around deliverables. Not knowing these, I defaulted to
-      simplicity and providing something that I believe I would find helpful.
-      Hopefully you do too.
+      simplicity and providing something that I would find helpful. Hopefully
+      you do too.
     </p>
     <hr class="py-6" />
     <!-- button primary -->
@@ -720,7 +721,9 @@ import { Code } from "astro:components";
     <p>
       This is just a simple fluid grid, but I call it out because it is one of
       the few things that relies on non-Tailwind CSS. It uses CSS grid and
-      auto-fit. Optionally a gutter size can be passed via a custom property.
+      auto-fill (althought this could easily be changed to auto-fit depending on
+      the situation via a custom property). Optionally a gutter size can also be
+      passed via a custom property.
     </p>
     <p>
       As this is just a simple grid, it could be used in a variety of scenarios
@@ -731,6 +734,9 @@ import { Code } from "astro:components";
     <ul>
       <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
         optional: gutter size
+      </li>
+      <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
+        optional: grid placement (auto-fill or auto-fit)
       </li>
     </ul>
     <h3 class="font-bold">dependencies:</h3>
@@ -745,7 +751,7 @@ import { Code } from "astro:components";
     <div class="bg-stone-100 p-10 flex border-black/25 rounded-md border-2">
       <div
         class="grid justify-items-center mx-4 w-full"
-        style="--gutter:var(--space-xs)"
+        style="--grid-placement: auto-fill; --gutter:var(--space-xs);"
       >
         <Card />
         <Card />
