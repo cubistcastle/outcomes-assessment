@@ -61,8 +61,13 @@ import { Code } from "astro:components";
       states. The icon should be hidden via ARIA for accessbility. This style
       should be used for primary actions on a given page. Future needs might
       require alternative icon placement, different, or no transition effects,
-      etc. Also, this and other components could have a secondary style for
-      system dark mode.
+      etc. These buttons are set to a flexbox context internally to center their
+      content and allow for icons or additional blocks.
+    </p>
+    <p>
+      Also, this and other components could have a secondary style for system
+      dark mode. I didn't include that in this library since I would have been
+      guessing at colors.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -301,6 +306,17 @@ import { Code } from "astro:components";
       grad or something else). Depending on needs, the content of the card could
       be configured in different ways and accept different properties.
     </p>
+    <p>
+      The main portion of the card is set to flex internally with justify betwen
+      allowing the icon section and the text portion to oppose each other. A
+      wrapper is placed around the icon in case other icons are needed in the
+      future.
+    </p>
+    <p>
+      The button section uses flexbox to distribute the buttons horizontally and
+      Tailwind's arbitrary variants to stretch them in order to accommodate an
+      additional button.
+    </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
       <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
@@ -411,6 +427,13 @@ import { Code } from "astro:components";
       image), and subnav back bar. I'm unsure how much portability is needed for
       those pieces, so I've left this as one complete component.
     </p>
+    <p>
+      The header is a fairly standard flexbox use case. Potentially of note,
+      what I assume is an account status icon is handled with a span with
+      absolute positioning, however, a pseudo element could have been used. Also
+      an ARIA label has been added to the account link to be more descriptive
+      for screen readers.
+    </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
       <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
@@ -422,6 +445,7 @@ import { Code } from "astro:components";
       <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
         profile initials or image
       </li>
+      <li>ARIA label for profile/account</li>
       <li class="bg-teal-600 inline me-2 py-1 px-2 rounded-xl text-white">
         profile status
       </li>
@@ -515,6 +539,7 @@ import { Code } from "astro:components";
       <!-- Profile badge/initials -->
       <a
         href="#"
+        aria-label="{Account Info for User, status available}"
         class="mr-2 flex h-11 w-11 items-center justify-center rounded-full bg-white pt-1 font-bold text-black transition-all hover:opacity-90 focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue"
       >
         WW
@@ -562,6 +587,10 @@ import { Code } from "astro:components";
       filter? Does it need to be wrapped in a form tag? etc). I've kept it
       fairly minimal with an aria-label for accessiblity but this one could
       certainly be more complex depending on its functionality.
+    </p>
+    <p>
+      Here again we use flexbox to split up the component into the input field
+      and the results section
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -639,6 +668,11 @@ import { Code } from "astro:components";
       This component is flexible enough to be used throughout the application.
       In case of third button in the button group, the border radius applies
       only to the first and last child.
+    </p>
+    <p>
+      Flexbox is used both for the entire component, as well as the tabs/buttons
+      themselves. Some fun Tailwind arbitrary variants allow for flexibly
+      targeting the button borders.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -783,6 +817,10 @@ import { Code } from "astro:components";
       This is a simple header for the card list. It can handle multiple icons
       and could easily be used in a variety of contexts where actionable icon
       buttons are needed close to a title.
+    </p>
+    <p>
+      And...we are using flexbox again, for both the main wrapper, and to handle
+      the icon section. Again, fairly classic example.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
