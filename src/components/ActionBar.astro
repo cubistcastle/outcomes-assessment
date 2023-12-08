@@ -9,15 +9,18 @@ interface Props {
 
 const { add, enabled, disabled, enabledNum } = Astro.props;
 ---
+
 <!-- Buttons could have variable names and counts -->
 <div
   class="action-bar mb-6 flex flex-wrap justify-center gap-6 text-sm sm:justify-normal sm:gap-6"
 >
   <!-- start two button tabs, border radius applied on first and last child -->
-  <div class="flex rounded [&>button:first-child]:rounded-s-sm [&>button:last-child]:rounded-e-sm ">
+  <div
+    class="flex rounded [&>button:first-child]:rounded-s-sm [&>button:last-child]:rounded-e-sm"
+  >
     <button
       type="button"
-      class="flex flex-nowrap items-center justify-center border  border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
+      class="flex flex-nowrap items-center justify-center border border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
     >
       <span
         class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold inline-block rounded leading-6"
@@ -28,7 +31,7 @@ const { add, enabled, disabled, enabledNum } = Astro.props;
     <button
       type="button"
       disabled
-      class="flex flex-nowrap items-center justify-center border  border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
+      class="flex flex-nowrap items-center justify-center border border-turquoise-700 bg-turquoise-700 p-2 text-white transition-all focus:outline focus:outline-1 focus:outline-offset-2 focus:outline-outline-blue hover:enabled:bg-turquoise-600 hover:enabled:text-white disabled:cursor-not-allowed disabled:border-neutral-500 disabled:bg-white disabled:text-neutral-500"
     >
       <span
         class="mr-1 inline-block h-6 w-6 rounded bg-neutral-500 font-bold leading-6 text-white"

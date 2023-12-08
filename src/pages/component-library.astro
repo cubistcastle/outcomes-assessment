@@ -2,15 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Card from "../components/Card.astro";
-import CardLight from "../components/Card-Light.astro";
+import CardLight from "../components/CardLight.astro";
 import ButtonPrimary from "../components/ButtonPrimary.astro";
 import ButtonSecondary from "../components/ButtonSecondary.astro";
 import IconButtonDark from "../components/IconButtonDark.astro";
-import IconButtonLight from "../components/IconButton-Light.astro";
+import IconButtonLight from "../components/IconButtonLight.astro";
 import SearchBar from "../components/SearchBar.astro";
 import ActionBar from "../components/ActionBar.astro";
 import CardGridHeader from "../components/CardGridHeader.astro";
-import IconButtonDarkDisable from "../components/IconButtonDark-Disable.astro";
+import IconButtonDarkDisable from "../components/IconButtonDarkDisable.astro";
 import { Code } from "astro:components";
 ---
 
@@ -136,7 +136,7 @@ import { Code } from "astro:components";
     <!-- secondary button -->
     <h2 class="font-bold text-step-2">Button — Secondary</h2>
     <p>
-      The secondary button style nearly the same as the primary button except
+      The secondary button style is nearly the same as the primary button except
       for the change in the default and state-based colors. This style should be
       used for secondary actions on a given page. This could also also be
       adapted to darker backgrounds like the alternate icon only button style
@@ -224,7 +224,8 @@ import { Code } from "astro:components";
       <span class="underline decoration-wavy decoration-pink-500">Note:</span> I
       would reccommend tweaking the colors on the active state on the buttons
       for light backgrounds and the main, active, and focus states of the
-      buttons for dark backgrounds as both have low color contrast.
+      buttons for dark backgrounds as both have low color contrast which could
+      an accessiblity issue.
     </p>
     <h3 class="font-bold">customization/fields:</h3>
     <ul>
@@ -292,11 +293,11 @@ import { Code } from "astro:components";
     />
     <a
       class="underline"
-      href="https://github.com/cubistcastle/outcomes-assessment/blob/main/src/components/IconButton-Light.astro"
+      href="https://github.com/cubistcastle/outcomes-assessment/blob/main/src/components/IconButtonLight.astro"
       >view source</a
     >
     <!-- card light and dark -->
-    <h2 class="font-bold text-step-2">Card — light and dark</h2>
+    <h2 class="font-bold text-step-2">Card — Light and Dark</h2>
     <p>
       The card component could potentially be flexible enough to hold a variety
       of information. For now, this is tailored to the Outcomes Assessment
@@ -307,8 +308,10 @@ import { Code } from "astro:components";
       be configured in different ways and accept different properties.
     </p>
     <p>
-      The main portion of the card is set to flex internally with justify betwen
-      allowing the icon section and the text portion to oppose each other. A
+      The main portion of the card is set to flex internally with <code
+        >justify-content: space-between</code
+      >
+       allowing the icon section and the text portion to oppose each other. A
       wrapper is placed around the icon in case other icons are needed in the
       future.
     </p>
@@ -415,7 +418,7 @@ import { Code } from "astro:components";
     <p>
       The header component prominently uses maroon to establish the brand. It
       utilizes a hamburger menu on desktop and mobile (although the resulting
-      menu and interaction has not been included here as it wasn not part of the
+      menu and interaction has not been included here as it was not part of the
       design spec). The title is customizable and so is the SVG icon. Like other
       components this SVG should be hidden via <code
         >aria-hidden="true" focusable="false"</code
@@ -430,7 +433,7 @@ import { Code } from "astro:components";
     <p>
       The header is a fairly standard flexbox use case. Potentially of note,
       what I assume is an account status icon is handled with a span with
-      absolute positioning, however, a pseudo element could have been used. Also
+      absolute positioning. However, a pseudo element could have been used. Also
       an ARIA label has been added to the account link to be more descriptive
       for screen readers.
     </p>
@@ -662,15 +665,15 @@ import { Code } from "astro:components";
       Enable button is to highlight the selected button or just to set it off
       from the neighboring gray button. Similarly should the button with 0
       results be disabled? I've chosen to disable it to at least show a
-      different look, but I could see ways to handle this in differently.
+      different look, but I could see ways to handle this differently.
     </p>
     <p>
       This component is flexible enough to be used throughout the application.
-      In case of third button in the button group, the border radius applies
+      In case of a third button in the button group, the border radius applies
       only to the first and last child.
     </p>
     <p>
-      Flexbox is used both for the entire component, as well as the tabs/buttons
+      Flexbox is used both for the entire component and as the tabs/buttons
       themselves. Some fun Tailwind arbitrary variants allow for flexibly
       targeting the button borders.
     </p>
@@ -751,11 +754,11 @@ import { Code } from "astro:components";
       href="https://github.com/cubistcastle/outcomes-assessment/blob/main/src/components/ActionBar.astro"
       >view source</a
     >
-    <h2 class="font-bold text-step-2">simple grid container for cards</h2>
+    <h2 class="font-bold text-step-2">Simple Grid Container for Cards</h2>
     <p>
       This is just a simple fluid grid, but I call it out because it is one of
       the few things that relies on non-Tailwind CSS. It uses CSS grid and
-      auto-fill (althought this could easily be changed to auto-fit depending on
+      auto-fill (although this could easily be changed to auto-fit depending on
       the situation via a custom property). Optionally a gutter size can also be
       passed via a custom property.
     </p>
