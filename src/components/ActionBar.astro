@@ -12,7 +12,7 @@ const { add, enabled, disabled, enabledNum } = Astro.props;
 
 <!-- Buttons could have variable names and counts -->
 <div
-  class="action-bar mb-6 flex flex-wrap justify-center gap-6 text-sm sm:justify-normal sm:gap-6"
+  class="action-bar mb-6 flex flex-wrap justify-center gap-2 text-sm sm:justify-normal sm:gap-6"
 >
   <!-- start two button tabs, border radius applied on first and last child -->
   <div
@@ -26,7 +26,7 @@ const { add, enabled, disabled, enabledNum } = Astro.props;
         class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold inline-block rounded leading-6"
         >{enabledNum}</span
       >
-      {enabled}</button
+      <span class="w-full">{enabled}</span></button
     >
     <button
       type="button"
@@ -37,7 +37,7 @@ const { add, enabled, disabled, enabledNum } = Astro.props;
         class="mr-1 inline-block h-6 w-6 rounded bg-neutral-500 font-bold leading-6 text-white"
         >0</span
       >
-      {disabled}</button
+      <span class="w-full">{disabled}</span></button
     >
   </div>
   <!-- end tablist -->

@@ -715,7 +715,7 @@ import { Code } from "astro:components";
       code={`<!-- action bar -->
 <!-- Buttons could have variable names and counts -->
 <div
-  class="action-bar mb-6 flex flex-wrap justify-center gap-6 text-sm sm:justify-normal sm:gap-6"
+  class="action-bar mb-6 flex flex-wrap justify-center gap-2 text-sm sm:justify-normal sm:gap-6"
 >
   <!-- start two button tabs, border radius applied on first and last child -->
   <div class="flex rounded [&>button:first-child]:rounded-s-sm [&>button:last-child]:rounded-e-sm ">
@@ -727,8 +727,10 @@ import { Code } from "astro:components";
         class="mr-1 bg-white h-6 w-6 text-turquoise-700 font-bold inline-block rounded leading-6"
         >{enabledNum}</span
       >
-      {enabledText}</button
-    >
+       <span class="w-full">
+        {enabledText}
+       </span>
+    </button>
     <button
       type="button"
       disabled
@@ -738,8 +740,10 @@ import { Code } from "astro:components";
         class="mr-1 inline-block h-6 w-6 rounded bg-neutral-500 font-bold leading-6 text-white"
         >{disabledNum}</span
       >
-      {disabledText}</button
-    >
+      <span class="w-full">
+      {disabledText}
+      </span>
+    </button>
   </div>
   <!-- end tablist -->
   <ButtonPrimary title={add} />
